@@ -4,7 +4,7 @@
 
 import Dimensions from 'Dimensions';
 var {width,height}=Dimensions.get('window')
-var bannerHeight=height/3.5
+var bannerHeight=height/3
 
 const CSS = {
     /************************全局共用位置控制***********************************/
@@ -48,6 +48,10 @@ const CSS = {
     IOS_MARGIN_TOP:{
         marginTop:20
     },
+    BottomLine:{
+        borderBottomWidth:1,
+        borderBottomColor:'#EFEFEF'
+    },
     /*****************************HomePage页面************************************/
     /*****************************TopBanner页面************************************/
     TopBanner_BACKGROUND:{
@@ -81,7 +85,7 @@ const CSS = {
     /****时间天气样式****/
     TopBanner_WeatherTime:{
         width:width-width*0.1,
-        height:bannerHeight/4,
+        height:bannerHeight/3.5,
         marginLeft:width*0.05,
         backgroundColor:'transparent',
         flexDirection: 'row',
@@ -92,11 +96,11 @@ const CSS = {
         height:bannerHeight/4,
     },
     TopBanner_TIME:{
-        fontSize:width*0.1,
+        fontSize:height*0.05,
         color:'#F1F1F1',
     },
     TopBanner_DAY:{
-        fontSize:width*0.025,
+        fontSize:height*0.015,
         color:'#F1F1F1',
     },
     TopBanner_WeatherTime_RIGHT:{
@@ -112,15 +116,15 @@ const CSS = {
         flexDirection: 'row',
     },
     TopBanner_TEMPERATURE:{
-        fontSize:width*0.1,
+        fontSize:height*0.05,
         color:'#F1F1F1',
     },
     TopBanner_LOCATION:{
-        fontSize:width*0.04,
+        fontSize:height*0.02,
         color:'#F1F1F1',
     },
     TopBanner_WEATHER:{
-        fontSize:width*0.04,
+        fontSize:height*0.02,
         color:'#F1F1F1',
     },
     /****搜索输入框样式****/
@@ -128,9 +132,9 @@ const CSS = {
         width:width-width*0.1,
         height:bannerHeight/7,
         marginLeft:width*0.05,
-        marginTop:bannerHeight/3/5,
+        marginTop:bannerHeight*0.01,
         backgroundColor:'#F1F1F1',
-        borderRadius:bannerHeight/5/2,
+        borderRadius:bannerHeight/5/4,
         justifyContent:'center',
         alignItems:'center',
         flexDirection: 'row',
@@ -139,8 +143,19 @@ const CSS = {
         width:width-width*0.1-width*0.15,
         height:bannerHeight/7,
         marginLeft:width*0.05,
-        borderRadius:bannerHeight/5/2,
+        borderRadius:bannerHeight/5/4,
         backgroundColor:'#F1F1F1'
+    },
+    /****TitleBar标题样式****/
+    TitleBar:{
+        height:height*0.05,
+        alignItems:'flex-end',
+    },
+    TitleBar_title:{
+        marginLeft:width*0.05,
+        color:'#E5471C',
+        borderBottomWidth:2,
+        borderBottomColor:'#E5471C',
     }
 };
 

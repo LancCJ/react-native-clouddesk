@@ -53,7 +53,7 @@ class TopBanner extends Component {
                     <View style={[Css.TopBanner_WeatherTime_RIGHT]}>
                         <View style={[Css.TopBanner_WeatherTime_RIGHT_TOP]}></View>
                         <View style={[Css.TopBanner_WeatherTime_RIGHT_BOTTOM]}>
-                            <Text style={[Css.TopBanner_TEMPERATURE]}>17</Text>
+                            <Text style={[Css.TopBanner_TEMPERATURE]}>17°</Text>
                             <View>
                                 <Text style={[Css.TopBanner_LOCATION]}>济宁</Text>
                                 <Text style={[Css.TopBanner_WEATHER]}>多云 轻度污染</Text>
@@ -66,6 +66,10 @@ class TopBanner extends Component {
                     <TextInput
                         style={[Css.TopBanner_SearchInput]}
                         placeholder="搜索相关APP或网页"
+                        //placeholderTextColor="#DEDEDE"
+                        textAlignVertical="center"
+                        underlineColorAndroid='transparent'
+                        includeFontPadding={false}
                     />
                     <TouchableOpacity onPress={()=>Alert.alert('进行搜索')}>
                         {searchIcon}
