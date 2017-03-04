@@ -15,6 +15,7 @@ import Css from '@config/Css'
 //引入自定义组件
 import Guide from './Guide'
 import HomePage from './home/HomePage'
+import LoginPage from './LoginPage'
 
 //模拟数据
 
@@ -45,8 +46,9 @@ class Root extends Component {
     render = () => (
         <Router onExitApp={this._backAndroidHandler}>
             <Scene key="root">
-                <Scene key="Guide" component={Guide} title="导航页" initial={true} hideNavBar={true}/>
-                <Scene key="HomePage" component={HomePage} title="首页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                <Scene key="Guide" component={Guide} title="导航页"  hideNavBar={true} initial={true}/>
+                <Scene key="LoginPage" component={LoginPage} title="登录页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                <Scene key="HomePage" component={HomePage} title="首页页" hideNavBar={true} type={ActionConst.REPLACE}/>
             </Scene>
         </Router>
     )

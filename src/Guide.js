@@ -39,7 +39,7 @@ class Guide extends Component {
     }
     doneBtnHandle = () => {
         //Alert.alert('Done');
-        Actions.HomePage();
+        Actions.LoginPage();
     }
     nextBtnHandle = (index) => {
         Alert.alert('Next');

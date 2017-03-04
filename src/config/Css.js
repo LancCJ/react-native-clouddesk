@@ -75,6 +75,21 @@ const CSS = {
         alignItems: 'center',
         backgroundColor: '#9DD6EB',
     },
+    /*****************************LoginPage页面************************************/
+    login:{
+       marginTop:height/4
+    },
+    loginInput:{
+        marginTop: 4,
+    },
+    loginTitle: {
+        paddingBottom: 16,
+        textAlign: 'center',
+        color: '#FFFFFF',
+        fontSize: 30,
+        fontWeight: 'bold',
+        opacity: 0.8,
+    },
     /*****************************HomePage页面************************************/
     /*****************************TopBanner页面************************************/
     TopBanner_BACKGROUND:{
