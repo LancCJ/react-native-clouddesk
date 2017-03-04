@@ -188,10 +188,23 @@ const CSS = {
         backgroundColor:'#F2F2F2',
         padding:width*0.01,
     },
-
+    /****横向banner列表样式****/
     listBanner:{
         marginTop:height*0.01,
-    }
+    },
+    /****新闻公告样式****/
+    news:{
+        marginTop:height*0.01,
+    },
+    swiperNews:{
+    },
+    swiperNewsImage:{
+        width:width,
+        height:width/2.5,
+        resizeMode:'cover'
+    },
+    listNews:{},
+
 
 };
 
