@@ -3,6 +3,6 @@ import {
     AppRegistry,
 } from 'react-native';
 
-import Guide from './src/Guide'
+import Root from './src/Root'
 
-AppRegistry.registerComponent('CloudDeskApp', () => Guide);
+AppRegistry.registerComponent('CloudDeskApp', () => Root);

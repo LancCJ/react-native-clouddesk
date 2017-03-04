@@ -19,6 +19,7 @@ import Css from '@config/Css'
 //第三方组件
 import SplashScreen from 'react-native-splash-screen'
 import AppIntro from 'react-native-app-intro';
+import { Actions } from 'react-native-router-flux'
 
 class Guide extends Component {
     constructor(props) {
@@ -32,11 +33,13 @@ class Guide extends Component {
         SplashScreen.hide();
     }
     onSkipBtnHandle = (index) => {
-        Alert.alert('Skip');
+        //Alert.alert('Skip');
         console.log(index);
+        Actions.HomePage();
     }
     doneBtnHandle = () => {
-        Alert.alert('Done');
+        //Alert.alert('Done');
+        Actions.HomePage();
     }
     nextBtnHandle = (index) => {
         Alert.alert('Next');
@@ -52,7 +55,7 @@ class Guide extends Component {
                 onDoneBtnClick={this.doneBtnHandle}
                 onSkipBtnClick={this.onSkipBtnHandle}
                 onSlideChange={this.onSlideChangeHandle}
-                doneBtnLabel="首页"
+                doneBtnLabel="登录"
                 skipBtnLabel="跳过"
             >
                     <View style={[Css.welcomeSlide]}  level={10}>
