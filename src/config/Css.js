@@ -5,6 +5,8 @@
 import Dimensions from 'Dimensions';
 var {width,height}=Dimensions.get('window')
 var bannerHeight=height/3
+var chartHeight=width/2.5
+
 
 const CSS = {
     /************************全局共用位置控制***********************************/
@@ -36,10 +38,15 @@ const CSS = {
         alignItems: 'center',
         justifyContent: 'center',
     },
-    // 分割线
+    // 水平分割线
     CALL_BORDER: {
         backgroundColor: 'black',
         height: 1,
+    },
+    // 左侧边框显示
+    lEFT_BORDER: {
+        borderLeftWidth:1,
+        borderLeftColor:'#EFEFEF'
     },
     // 顶部导航栏背景颜色
     NAVIGATIONBAR_TINTCOLOR: {
@@ -51,6 +58,9 @@ const CSS = {
     BottomLine:{
         borderBottomWidth:1,
         borderBottomColor:'#EFEFEF'
+    },
+    simpleLoading:{
+
     },
     /*****************************HomePage页面************************************/
     /*****************************TopBanner页面************************************/
@@ -153,9 +163,30 @@ const CSS = {
     },
     TitleBar_title:{
         marginLeft:width*0.05,
-        color:'#E5471C',
         borderBottomWidth:2,
-        borderBottomColor:'#E5471C',
+    },
+    /****Chart图标样式****/
+    Chart:{
+        flexDirection: 'row',
+        width:width,
+        height:chartHeight,
+        marginTop:height*0.01,
+        borderTopColor:'#F2F2F2',
+        borderTopWidth:2,
+        borderBottomColor:'#F2F2F2',
+        borderBottomWidth:2,
+    },
+    PieChart:{
+        flex:1,
+        height:chartHeight-width*0.01*2,
+        backgroundColor:'#F2F2F2',
+        padding:width*0.01,
+    },
+    LineChart:{
+        flex:2,
+        height:chartHeight-width*0.01*2,
+        backgroundColor:'#F2F2F2',
+        padding:width*0.01,
     }
 };
 

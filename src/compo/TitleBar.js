@@ -4,10 +4,7 @@
 import React, {Component} from 'react';
 import {
     View,
-    Text,
-    StyleSheet,
-    StatusBar,
-    ScrollView
+    Text
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -25,7 +22,9 @@ class TitleBar extends Component {
 
     render = () => (
         <View style={[Css.ROW_CONTAINER,Css.BottomLine,Css.TitleBar]}>
-            <Text style={[Css.TitleBar_title]}>{this.props.titleName}    ></Text>
+            <View style={[Css.TitleBar_title,{borderBottomColor:this.props.titleColor,borderBottomColor:this.props.titleColor}]}>
+                <Text style={[{color:this.props.titleColor}]}>{this.props.titleName}    ></Text>
+            </View>
         </View>
     )
 }
