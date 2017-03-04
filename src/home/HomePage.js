@@ -15,6 +15,7 @@ import Css from '../config/Css'
 
 //引入自定义组件
 import TopBanner from '../compo/TopBanner'
+import ListBanner from '../compo/ListBanner'
 import TitleBar from '../compo/TitleBar'
 import PieChart from '../compo/Chart/PieChart'
 import LineChart from '../compo/Chart/LineChart'
@@ -23,10 +24,29 @@ import LineChart from '../compo/Chart/LineChart'
 var pieChartOptionJson=require('../data/PieChart.json')
 var lineChartOptionJson=require('../data/LineChart.json')
 
+//第三方组件
+import ScrollTopView from 'react-native-scrolltotop';
+
 class HomePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isShowToTop: false,
+        };
+    }
+
+    _onScroll(e) {
+        var offsetY = e.nativeEvent.contentOffset.y;
+
+        if(offsetY > 100) {
+            this.setState({
+                isShowToTop: true
+            })
+        } else {
+            this.setState({
+                isShowToTop: false
+            })
+        }
     }
 
     render = () => (
@@ -36,7 +56,10 @@ class HomePage extends Component {
                 barStyle="light-content"
                 translucent={true}
             />
-            <ScrollView>
+            <ScrollView
+                ref="listview"
+                onScroll={(e)=>this._onScroll(e)}
+            >
                 <TopBanner/>
 
                 <TitleBar titleName="统计分析" titleColor="#E5471C"/>
@@ -46,10 +69,18 @@ class HomePage extends Component {
                 </View>
 
                 <TitleBar titleName="PSTORE "  titleColor="#427FAA"/>
+                <View style={[Css.listBanner]}>
+                    <ListBanner/>
+                </View>
+
                 <TitleBar titleName="常用功能" titleColor="#81CB3B"/>
+
                 <TitleBar titleName="新闻公告" titleColor="#FF9733"/>
 
             </ScrollView>
+            {this.state.isShowToTop?<ScrollTopView
+                    root={this}
+                ></ScrollTopView>:null}
         </View>
     )
 }

@@ -187,7 +187,12 @@ const CSS = {
         height:chartHeight-width*0.01*2,
         backgroundColor:'#F2F2F2',
         padding:width*0.01,
+    },
+
+    listBanner:{
+        marginTop:height*0.01,
     }
+
 };
 
 export default CSS;
