@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
+    AppRegistry,
 } from 'react-native';
 
-import HomePage from './src/home/HomePage'
+import Guide from './src/Guide'
 
-AppRegistry.registerComponent('CloudDeskApp', () => HomePage);
+AppRegistry.registerComponent('CloudDeskApp', () => Guide);

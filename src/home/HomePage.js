@@ -37,9 +37,11 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        var modelds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
             isShowToTop: false,
-            dataSource: ds.cloneWithRows([])
+            dataSource: ds.cloneWithRows([]),
+            modelDataSource: modelds.cloneWithRows(listModelData.data)
         };
     }
 
@@ -67,16 +69,16 @@ class HomePage extends Component {
     }
 
     componentDidMount=()=> {
-        this.fetchData()
+        this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(listnNewsData.data),
+        });
     }
 
     fetchData() {
         fetch(REQUEST_URL)
             .then((response) => response.json())
             .then((responseData) => {
-                this.setState({
-                    dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
-                });
+
             })
             .done();
     }
@@ -106,6 +108,14 @@ class HomePage extends Component {
                 </View>
 
                 <TitleBar titleName="常用功能" titleColor="#81CB3B"/>
+                <View>
+                    <ListView
+                        contentContainerStyle={Css.listModels}
+                        dataSource={this.state.modelDataSource}
+                        renderRow={(rowData) => this.renderRowView(rowData,'models')}
+                        enableEmptySections={true}
+                    />
+                </View>
 
                 <TitleBar titleName="新闻公告" titleColor="#FF9733"/>
                 <View style={[Css.news]}>

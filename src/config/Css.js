@@ -6,7 +6,13 @@ import Dimensions from 'Dimensions';
 var {width,height}=Dimensions.get('window')
 var bannerHeight=height/3
 var chartHeight=width/2.5
+var newsHeight=height/8
 
+//一些常量设置
+var cols = 5; //一行几个cell
+var cellWH = 40; //cell的宽高
+var vMargin = (width - cellWH * cols)/ (cols + 1); //cell之间的边距
+var hMargin = 20;
 
 const CSS = {
     /************************全局共用位置控制***********************************/
@@ -61,6 +67,13 @@ const CSS = {
     },
     simpleLoading:{
 
+    },
+    /*****************************Welcome页面************************************/
+    welcomeSlide: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#9DD6EB',
     },
     /*****************************HomePage页面************************************/
     /*****************************TopBanner页面************************************/
@@ -192,6 +205,24 @@ const CSS = {
     listBanner:{
         marginTop:height*0.01,
     },
+    /****功能模块列表样式****/
+    listModels:{
+        //改变主轴方向
+        flexDirection:'row',
+        //多行显示
+        flexWrap:'wrap'
+    },
+    innerViewStyle:{
+        width:cellWH,
+        height:cellWH,
+        marginLeft:vMargin,
+        marginTop:hMargin,
+        alignItems:'center'
+    },
+    iconStyle :{
+        width:40,
+        height:40
+    },
     /****新闻公告样式****/
     news:{
         marginTop:height*0.01,
@@ -203,9 +234,22 @@ const CSS = {
         height:width/2.5,
         resizeMode:'cover'
     },
-    listNews:{},
-
-
+    listNews:{
+        marginTop:height*0.01,
+        borderTopColor:'#F2F2F2',
+        borderTopWidth:2,
+    },
+    /****新闻列表样式****/
+    listNewsRowContent:{
+        flex:3,
+        height:newsHeight,
+        justifyContent:'space-around'
+    },
+    listNewsRowImage:{
+        flex:2,
+        height:newsHeight,
+        resizeMode:'cover'
+    }
 };
 
 export default CSS;
