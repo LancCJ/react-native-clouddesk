@@ -10,9 +10,10 @@ var newsHeight=height/8
 
 //一些常量设置
 var cols = 5; //一行几个cell
-var cellWH = 40; //cell的宽高
+var cellWH = 70; //cell的宽高
 var vMargin = (width - cellWH * cols)/ (cols + 1); //cell之间的边距
 var hMargin = 20;
+var PER_ROW = 3;
 
 const CSS = {
     /************************全局共用位置控制***********************************/
@@ -91,6 +92,11 @@ const CSS = {
         opacity: 0.8,
     },
     /*****************************HomePage页面************************************/
+    actionButtonIcon:{
+        fontSize: 20,
+        height: 22,
+        color: 'white',
+    },
     /*****************************TopBanner页面************************************/
     TopBanner_BACKGROUND:{
         width:width,

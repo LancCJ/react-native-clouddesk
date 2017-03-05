@@ -8,7 +8,8 @@ import {
     StyleSheet,
     StatusBar,
     ScrollView,
-    ListView
+    ListView,
+    Alert
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -25,6 +26,9 @@ import RowDataView from '../compo/RowDataView'
 
 //第三方组件
 import ScrollTopView from 'react-native-scrolltotop';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
+import GridView from 'react-native-grid-view'
 
 //模拟数据
 var pieChartOptionJson=require('../data/PieChart.json')
@@ -41,7 +45,7 @@ class HomePage extends Component {
         this.state = {
             isShowToTop: false,
             dataSource: ds.cloneWithRows([]),
-            modelDataSource: modelds.cloneWithRows(listModelData.data)
+            modelDataSource: listModelData.data
         };
     }
 
@@ -60,8 +64,10 @@ class HomePage extends Component {
     }
 
     renderRowView=(rowData,type)=>{
+        //console.log('渲染每行'+rowData.id)
         return(
             <RowDataView
+                key={rowData.id}
                 data={rowData}
                 type={type}
             />
@@ -81,6 +87,12 @@ class HomePage extends Component {
 
             })
             .done();
+    }
+
+    _actionButtonView=()=>{
+        return (
+            <Text>消息</Text>
+        )
     }
 
     render = () => (
@@ -109,12 +121,18 @@ class HomePage extends Component {
 
                 <TitleBar titleName="常用功能" titleColor="#81CB3B"/>
                 <View>
-                    <ListView
-                        contentContainerStyle={Css.listModels}
-                        dataSource={this.state.modelDataSource}
-                        renderRow={(rowData) => this.renderRowView(rowData,'models')}
-                        enableEmptySections={true}
+                    <GridView
+
+                        items={this.state.modelDataSource}
+                        itemsPerRow={5}
+                        renderItem={(rowData) => this.renderRowView(rowData,'models')}
                     />
+                    {/*<ListView*/}
+                        {/*contentContainerStyle={Css.listModels}*/}
+                        {/*dataSource={this.state.modelDataSource}*/}
+                        {/*renderRow={(rowData) => this.renderRowView(rowData,'models')}*/}
+                        {/*enableEmptySections={true}*/}
+                    {/*/>*/}
                 </View>
 
                 <TitleBar titleName="新闻公告" titleColor="#FF9733"/>
@@ -134,6 +152,14 @@ class HomePage extends Component {
             {this.state.isShowToTop?<ScrollTopView
                     root={this}
                 ></ScrollTopView>:null}
+            {/* Rest of the app comes ABOVE the action button component !*/}
+            <ActionButton
+                offsetX={22}
+                icon={<Icon name="ios-mail-outline" color="#FFFFFF" size={30}/>}
+                buttonStyle={{backgroundColor:'transparent'}}
+                onPress={()=>Alert.alert('点击了')}
+                buttonColor="#1B52EF">
+            </ActionButton>
         </View>
     )
 }
