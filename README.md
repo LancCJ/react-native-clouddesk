@@ -9,6 +9,6 @@
 
 | Platform| GIF     | 
 | :------:| :-------: 
-| iOS|  ![ios app](https://github.com/LancCJ/github-project-docs/raw/master/doc/goshopping/IOS_HOME.png)  | 
-| Android |![Android app](https://github.com/LancCJ/github-project-docs/raw/master/doc/goshopping/ANDROID_HOME.png)    |   
+| iOS|  ![ios app](https://github.com/LancCJ/github-project-docs/raw/master/doc/react-native-clouddesk/IOS_APP.gif)  | 
+| Android |![Android app](https://github.com/LancCJ/github-project-docs/raw/master/doc/react-native-clouddesk/ANDROID_APP.gif)    |   
         
