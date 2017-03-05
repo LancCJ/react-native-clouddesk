@@ -1,12 +1,16 @@
 /**
  * 样式全局控制
  */
-
+import {
+    Platform
+} from 'react-native';
 import Dimensions from 'Dimensions';
 var {width,height}=Dimensions.get('window')
 var bannerHeight=height/3
 var chartHeight=width/2.5
 var newsHeight=height/8
+var mailsHeight=height/10
+var mailDetailInfoHeight=height/12
 
 //一些常量设置
 var cols = 5; //一行几个cell
@@ -47,7 +51,7 @@ const CSS = {
     },
     // 水平分割线
     CALL_BORDER: {
-        backgroundColor: 'black',
+        backgroundColor: '#F4F3F4',
         height: 1,
     },
     // 左侧边框显示
@@ -68,6 +72,29 @@ const CSS = {
     },
     simpleLoading:{
 
+    },
+    /*****************************NavBar导航样式************************************/
+    navBarStyle:{
+        height:height*0.06+(Platform.OS==='ios'?20:0),
+        backgroundColor:'#008ECB'
+    },
+    navBarContentStyle:{
+        marginTop:Platform.OS==='ios'?20:0,
+        height:height*0.06,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+
+    },
+    topTextStyles:{
+        fontSize:20,
+        color:'#FFFFFF'
+    },
+    topIconStyles:{
+        height:height*0.05,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     /*****************************Welcome页面************************************/
     welcomeSlide: {
@@ -270,6 +297,83 @@ const CSS = {
         flex:2,
         height:newsHeight,
         resizeMode:'cover'
+    },
+    /*****************************MailPage页面************************************/
+    listMails:{
+        marginTop:height*0.01,
+        width:width,
+        height:mailsHeight,
+        borderTopColor:'#F2F2F2',
+        borderTopWidth:2,
+    },
+    mailViewStyle:{
+        alignItems:'center',
+        justifyContent:'center',
+        borderBottomColor:'#F2F2F2',
+        borderBottomWidth:2,
+        padding:width*0.01
+    },
+    listMailRowImage:{
+        flex:1,
+        height:mailsHeight,
+        resizeMode:'cover'
+    },
+    mailInfo:{
+        flex:5,
+        height:mailsHeight,
+        alignItems:'flex-start',
+        justifyContent:'center',
+    },
+    mailDetailButtonView:{
+        flex:1,
+        height:mailsHeight,
+        justifyContent:'flex-end',
+        borderBottomColor:'#FB462A',
+        borderBottomWidth:2,
+    },
+    mailDetailButton:{
+        fontSize:12,
+        color:'#FB462A'
+    },
+    /*****************************MailDetailPage页面************************************/
+    mailDetailInfo:{
+        width:width,
+        height:mailDetailInfoHeight,
+        flexDirection: 'row',
+        padding:width*0.02
+
+    },
+    mailDetailImage:{
+        flex:1,
+        height:mailDetailInfoHeight,
+        resizeMode:'cover'
+    },
+    mailDetailTitle:{
+        flex:5,
+        height:mailDetailInfoHeight,
+        justifyContent:"space-around",
+        alignItems:'flex-start',
+        marginLeft:width*0.02,
+    },
+    mailContent:{
+        backgroundColor:"#FFFEE7",
+        padding:width*0.02,
+        marginTop:height*0.02,
+        justifyContent:"space-between",
+        paddingBottom:height*0.04
+    },
+    handlingSuggestion:{
+        alignItems:'flex-start',
+        justifyContent:'center',
+        marginTop:height*0.01,
+        padding:width*0.02,
+    },
+    handlingSuggestionText:{
+        color:'#F1764E'
+    },
+    mailDatailSender:{
+        marginTop:height*0.03,
+        alignSelf:"flex-end"
     }
 };
 

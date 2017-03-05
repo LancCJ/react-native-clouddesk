@@ -5,7 +5,8 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -16,6 +17,7 @@ import Css from '@config/Css'
 //模拟数据
 
 //第三方组件
+import { Actions } from 'react-native-router-flux'
 
 class RowDataView extends Component {
     constructor(props) {
@@ -43,12 +45,31 @@ class RowDataView extends Component {
                             />
                         </View>
                     </View>
-                ):(
+                ):
+                this.props.type==='models'?
+                (
                     <View style={Css.innerViewStyle}>
                         <Image source={{uri:this.props.data.thumbnail}} style={Css.iconStyle}/>
                         <Text style={[{color:'#6F6E6A',fontSize:8,marginTop:5}]}>{this.props.data.title}</Text>
                     </View>
-                )
+                ):(
+                    <TouchableOpacity onPress={()=>Actions.MailDetailPage({"data":this.props.data})}>
+                        <View style={[Css.mailViewStyle,Css.ROW_CONTAINER]}>
+                            <Image
+                                style={[Css.listMailRowImage]}
+                                source={{uri: 'mail'}}
+                            />
+                            <View style={[Css.mailInfo]}>
+                                <Text numberOfLines={1}>标题:{this.props.data.title}</Text>
+                                <Text>回复人:{this.props.data.reply}</Text>
+                                <Text>发件日期:{this.props.data.time}</Text>
+                            </View>
+                            <View style={[Css.mailDetailButtonView]}>
+                                <Text style={[Css.mailDetailButton]}>邮件详情</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    )
     )
 }
 

@@ -16,6 +16,8 @@ import Css from '@config/Css'
 import Guide from './Guide'
 import HomePage from './home/HomePage'
 import LoginPage from './LoginPage'
+import MailPage from './mail/MailPage'
+import MailDetailPage from './mail/MailDetailPage'
 
 //模拟数据
 
@@ -48,7 +50,9 @@ class Root extends Component {
             <Scene key="root">
                 <Scene key="Guide" component={Guide} title="导航页"  hideNavBar={true} initial={true}/>
                 <Scene key="LoginPage" component={LoginPage} title="登录页" hideNavBar={true} type={ActionConst.REPLACE}/>
-                <Scene key="HomePage" component={HomePage} title="首页页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                <Scene key="HomePage" component={HomePage} title="首页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                <Scene key="MailPage" component={MailPage} title="邮件列表页" hideNavBar={true} />
+                <Scene key="MailDetailPage" component={MailDetailPage} title="邮件详情页" hideNavBar={true} />
             </Scene>
         </Router>
     )

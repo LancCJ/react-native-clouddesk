@@ -29,6 +29,7 @@ import ScrollTopView from 'react-native-scrolltotop';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import GridView from 'react-native-grid-view'
+import { Actions } from 'react-native-router-flux'
 
 //模拟数据
 var pieChartOptionJson=require('../data/PieChart.json')
@@ -157,7 +158,7 @@ class HomePage extends Component {
                 offsetX={22}
                 icon={<Icon name="ios-mail-outline" color="#FFFFFF" size={30}/>}
                 buttonStyle={{backgroundColor:'transparent'}}
-                onPress={()=>Alert.alert('点击了')}
+                onPress={()=>Actions.MailPage()}
                 buttonColor="#1B52EF">
             </ActionButton>
         </View>
