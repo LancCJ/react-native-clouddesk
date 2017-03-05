@@ -8,6 +8,6 @@
 ## Screens
 
 | Platform| IOS     | ANDROID
-| :------:| :-------: 
+| :------:| :-------: | :-------: 
 | GIF|  ![ios app](https://github.com/LancCJ/github-project-docs/raw/master/doc/react-native-clouddesk/IOS_APP.gif) |![Android app](https://github.com/LancCJ/github-project-docs/raw/master/doc/react-native-clouddesk/ANDROID_APP.gif)    |   
         
