@@ -34,7 +34,7 @@ import GridView from 'react-native-grid-view'
 var pieChartOptionJson=require('../data/PieChart.json')
 var lineChartOptionJson=require('../data/LineChart.json')
 var listnNewsData=require('../data/listData.json')
-var listModelData=require('../data/listModel.json')
+var listModelData=require('../data/listModels.json')
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 class HomePage extends Component {
