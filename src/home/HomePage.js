@@ -44,9 +44,10 @@ class HomePage extends Component {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         var modelds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
+            isShowGuide:true,
             isShowToTop: false,
             dataSource: ds.cloneWithRows([]),
-            modelDataSource: listModelData.data
+            modelDataSource: listModelData.data,
         };
     }
 
@@ -79,6 +80,8 @@ class HomePage extends Component {
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(listnNewsData.data),
         });
+        //TODO
+        this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
     }
 
     fetchData() {
@@ -161,6 +164,13 @@ class HomePage extends Component {
                 onPress={()=>Actions.MailPage()}
                 buttonColor="#1B52EF">
             </ActionButton>
+
+
+
+
+            {/*<View style={[{backgroundColor:"red",alignSelf:"flex-start",width:Css.SCREEN_WIDTH,height:Css.SCREEN_HEIGHT}]}>*/}
+                {/*<Text>我是指引界面</Text>*/}
+            {/*</View>*/}
         </View>
     )
 }

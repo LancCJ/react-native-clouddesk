@@ -75,11 +75,11 @@ const CSS = {
     },
     /*****************************NavBar导航样式************************************/
     navBarStyle:{
-        height:height*0.06+(Platform.OS==='ios'?20:0),
+        height:height*0.06+(Platform.OS==='ios'?20:25),
         backgroundColor:'#008ECB'
     },
     navBarContentStyle:{
-        marginTop:Platform.OS==='ios'?20:0,
+        marginTop:Platform.OS==='ios'?20:25,
         height:height*0.06,
         flexDirection:'row',
         alignItems:'center',
@@ -102,6 +102,13 @@ const CSS = {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#9DD6EB',
+    },
+
+    /*****************************LoginPage页面************************************/
+    explainPageImage:{
+        width:width,
+        height:height,
+        resizeMode:'cover'
     },
     /*****************************LoginPage页面************************************/
     login:{
