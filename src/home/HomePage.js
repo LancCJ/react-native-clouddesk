@@ -108,13 +108,13 @@ class HomePage extends Component {
             >
                 <TopBanner/>
 
-                <TitleBar titleName="统计分析" titleColor="#E5471C"/>
+                <TitleBar titleName="数据统计" titleColor="#E5471C"/>
                 <View style={[Css.Chart,Css.CENTER_CONTAINER]}>
                     <PieChart chartWidth={Css.SCREEN_WIDTH/3} chartHeight={Css.SCREEN_WIDTH/2.5} option={pieChartOptionJson}/>
                     <LineChart chartWidth={Css.SCREEN_WIDTH/3*2} chartHeight={Css.SCREEN_WIDTH/2.5} option={lineChartOptionJson}/>
                 </View>
 
-                <TitleBar titleName="PSTORE "  titleColor="#427FAA"/>
+                <TitleBar titleName="快捷链接"  titleColor="#427FAA"/>
                 <View style={[Css.listBanner]}>
                     <ListBanner/>
                 </View>

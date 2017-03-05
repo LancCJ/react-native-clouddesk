@@ -40,9 +40,9 @@ class TopBanner extends Component {
                         {/*source={{uri: StaticImage.TopBanner_LOGO}}*/}
                         {/*style={Css.TopBanner_LOGO}*/}
                     {/*/>*/}
-                    <Text style={[Css.TopBanner_AppName]}>警务云桌面</Text>
+                    <Text style={[Css.TopBanner_AppName]}>APP NAME</Text>
                     {userIcon}
-                    <Text style={[Css.TopBanner_User]}>你好!超级管理员</Text>
+                    <Text style={[Css.TopBanner_User]}>你好!小帅哥</Text>
                 </View>
 
                 <View style={[Css.TopBanner_WeatherTime]}>

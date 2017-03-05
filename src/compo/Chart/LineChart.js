@@ -38,7 +38,7 @@ const option = {
         textStyle:{
             fontSize:'6'
         },
-        data:['重点人员','实有人口','出租房屋','流动人口','车查询']
+        data:['统计项1','统计项2','统计项3','统计项4','统计项5']
     },
     grid: {
         height:'80%',
@@ -48,32 +48,32 @@ const option = {
     },
     xAxis: {
         type : 'category',
-        data:['重点人员','实有人口','出租房屋','流动人口','车查询']
+        data:['统计项1','统计项2','统计项3','统计项4','统计项5']
     },
     yAxis: {},
     series: [
         {
-            name: '重点人员',
+            name: '统计项1',
             type: 'bar',
             data: [335]
         },
         {
-            name: '实有人口',
+            name: '统计项2',
             type: 'bar',
             data: [310]
         },
         {
-            name: '出租房屋',
+            name: '统计项3',
             type: 'bar',
             data: [234]
         },
         {
-            name: '流动人口',
+            name: '统计项4',
             type: 'bar',
             data: [135]
         },
         {
-            name: '车查询',
+            name: '统计项5',
             type: 'bar',
             data: [1548]
         }

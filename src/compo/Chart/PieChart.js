@@ -35,7 +35,7 @@ const option = {
         textStyle:{
           fontSize:'6'
         },
-        data:['重点人员','实有人口','出租房屋','流动人口','车查询']
+        data:['统计项1','统计项2','统计项3','统计项4','统计项5']
     },
     series: [
         {
@@ -62,11 +62,11 @@ const option = {
                 }
             },
             data:[
-                {value:335, name:'重点人员'},
-                {value:310, name:'实有人口'},
-                {value:234, name:'出租房屋'},
-                {value:135, name:'流动人口'},
-                {value:1548, name:'车查询'}
+                {value:335, name:'统计项1'},
+                {value:310, name:'统计项2'},
+                {value:234, name:'统计项3'},
+                {value:135, name:'统计项4'},
+                {value:1548, name:'统计项5'}
             ]
         }
     ]
