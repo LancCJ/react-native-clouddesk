@@ -46,36 +46,22 @@ const option = {
         left:'1%',
         containLabel: true
     },
-    xAxis: {
-        type : 'category',
-        data:['统计项1','统计项2','统计项3','统计项4','统计项5']
-    },
+    xAxis : [
+        {
+            data : ['统计项1','统计项2','统计项3','统计项4','统计项5'],
+            axisLabel:{
+                textStyle: {
+                    fontSize: 6  //刻度大小
+                }
+            }
+        }
+    ],
     yAxis: {},
     series: [
         {
-            name: '统计项1',
-            type: 'bar',
-            data: [335]
-        },
-        {
-            name: '统计项2',
-            type: 'bar',
-            data: [310]
-        },
-        {
-            name: '统计项3',
-            type: 'bar',
-            data: [234]
-        },
-        {
-            name: '统计项4',
-            type: 'bar',
-            data: [135]
-        },
-        {
-            name: '统计项5',
-            type: 'bar',
-            data: [1548]
+            type:'bar',
+            barWidth: '60%',
+            data:[10, 52, 200, 334, 390]
         }
     ]
 };

@@ -64,7 +64,7 @@ class TopBanner extends Component {
 
                 <View style={[Css.TopBanner_Search]}>
                     <TextInput
-                        style={[Css.TopBanner_SearchInput]}
+                        style={[Css.TopBanner_SearchInput,{fontSize:10}]}
                         placeholder="搜索相关APP或网页"
                         //placeholderTextColor="#DEDEDE"
                         textAlignVertical="center"
