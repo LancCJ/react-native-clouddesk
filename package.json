@@ -12,7 +12,6 @@
     "react-native": "0.42.0",
     "react-native-action-button": "^2.6.2",
     "react-native-app-intro": "^1.1.5",
-    "react-native-easy-grid": "^0.1.8",
     "react-native-grid-view": "^0.4.1",
     "react-native-router-flux": "^3.38.0",
     "react-native-scrolltotop": "0.0.6",
