@@ -48,10 +48,12 @@ class RowDataView extends Component {
                 ):
                 this.props.type==='models'?
                 (
-                    <View style={Css.innerViewStyle}>
-                        <Image source={{uri:this.props.data.thumbnail}} style={Css.iconStyle}/>
-                        <Text style={[{color:'#6F6E6A',fontSize:8,marginTop:5}]}>{this.props.data.title}</Text>
-                    </View>
+                    <TouchableOpacity onPress={()=>Actions.PeopleSearchPage()}>
+                        <View style={Css.innerViewStyle}>
+                            <Image source={{uri:this.props.data.thumbnail}} style={Css.iconStyle}/>
+                            <Text style={[{color:'#6F6E6A',fontSize:8,marginTop:5}]}>{this.props.data.title}</Text>
+                        </View>
+                    </TouchableOpacity>
                 ):(
                     <TouchableOpacity onPress={()=>Actions.MailDetailPage({"data":this.props.data})}>
                         <View style={[Css.mailViewStyle,Css.ROW_CONTAINER]}>

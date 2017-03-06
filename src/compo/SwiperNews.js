@@ -32,6 +32,7 @@ class SwiperNews extends Component {
                 width={Css.SCREEN_WIDTH}
                 height={Css.SCREEN_WIDTH/2.5}
                 dotColor="#F5F5F5"
+                autoplay={true}
             >
                 <View >
                     <Image

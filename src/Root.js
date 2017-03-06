@@ -20,6 +20,9 @@ import MailPage from './mail/MailPage'
 import MailDetailPage from './mail/MailDetailPage'
 import ExplainPage from './ExplainPage'
 
+//业务功能界面
+import PeopleSearchPage from './app/PeopleSearch/PeopleSearchPage'
+
 //模拟数据
 
 //第三方组件
@@ -60,6 +63,8 @@ class Root extends Component {
                         <Scene key="HomePage" component={HomePage} title="首页" hideNavBar={true} type={ActionConst.REPLACE}/>
                         <Scene key="MailPage" component={MailPage} title="邮件列表页" hideNavBar={true} />
                         <Scene key="MailDetailPage" component={MailDetailPage} title="邮件详情页" hideNavBar={true} />
+
+                        <Scene key="PeopleSearchPage" component={PeopleSearchPage} title="人员查询页" hideNavBar={true} />
                     </Scene>
                     <Scene key="ExplainPage" component={ExplainPage} title="引导说明页" />
                 </Scene>
