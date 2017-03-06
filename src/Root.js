@@ -25,6 +25,10 @@ import ExplainPage from './ExplainPage'
 //第三方组件
 import { Router, Scene ,ActionConst ,Modal} from 'react-native-router-flux';
 
+//Redux
+import { store } from './redux/store/index.js';
+import { Provider } from 'react-redux';
+
 class Root extends Component {
     constructor(props) {
         super(props);
@@ -47,18 +51,20 @@ class Root extends Component {
     }
 
     render = () => (
-        <Router onExitApp={this._backAndroidHandler}>
-            <Scene key="modal" component={Modal} >
-                <Scene key="root">
-                    <Scene key="Guide" component={Guide} title="导航页"  hideNavBar={true} initial={true}/>
-                    <Scene key="LoginPage" component={LoginPage} title="登录页" hideNavBar={true} type={ActionConst.REPLACE}/>
-                    <Scene key="HomePage" component={HomePage} title="首页" hideNavBar={true} type={ActionConst.REPLACE}/>
-                    <Scene key="MailPage" component={MailPage} title="邮件列表页" hideNavBar={true} />
-                    <Scene key="MailDetailPage" component={MailDetailPage} title="邮件详情页" hideNavBar={true} />
+        <Provider store={store}>
+            <Router onExitApp={this._backAndroidHandler}>
+                <Scene key="modal" component={Modal} >
+                    <Scene key="root">
+                        <Scene key="Guide" component={Guide} title="导航页"  hideNavBar={true} initial={true}/>
+                        <Scene key="LoginPage" component={LoginPage} title="登录页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                        <Scene key="HomePage" component={HomePage} title="首页" hideNavBar={true} type={ActionConst.REPLACE}/>
+                        <Scene key="MailPage" component={MailPage} title="邮件列表页" hideNavBar={true} />
+                        <Scene key="MailDetailPage" component={MailDetailPage} title="邮件详情页" hideNavBar={true} />
+                    </Scene>
+                    <Scene key="ExplainPage" component={ExplainPage} title="引导说明页" />
                 </Scene>
-                <Scene key="ExplainPage" component={ExplainPage} title="引导说明页" />
-            </Scene>
-        </Router>
+            </Router>
+        </Provider>
     )
 }
 

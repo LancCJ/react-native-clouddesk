@@ -31,6 +31,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import GridView from 'react-native-grid-view'
 import { Actions } from 'react-native-router-flux'
 
+//redux
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { store } from '../redux/store/index.js';
+import { weather} from '../redux/action/actionCreator.js';
+
 //模拟数据
 var pieChartOptionJson=require('../data/PieChart.json')
 var lineChartOptionJson=require('../data/LineChart.json')
@@ -80,6 +86,10 @@ class HomePage extends Component {
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(listnNewsData.data),
         });
+
+        console.log(store);
+
+        store.dispatch(weather());
         //TODO
         this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
     }
@@ -175,4 +185,12 @@ class HomePage extends Component {
     )
 }
 
-export default HomePage;
+export default connect(
+    (store) => ({
+        weather: store.weather
+    }),
+    (dispatch) => ({
+        weatherAction: bindActionCreators(weather, dispatch)
+    })
+)(HomePage);
+
