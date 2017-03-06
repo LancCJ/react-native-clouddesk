@@ -174,7 +174,7 @@ const CSS = {
         height:bannerHeight/4,
     },
     TopBanner_TIME:{
-        fontSize:height*0.05,
+        fontSize:height*0.04,
         color:'#F1F1F1',
     },
     TopBanner_DAY:{

@@ -1,8 +1,10 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import { weather} from './reducers.js';
+import { weather,day,time} from './reducers.js';
 
 export default combineReducers({
-  weatherStore: weather
+  weatherStore: weather,
+  dayStore: day,
+  timeStore: time
 });

@@ -47,8 +47,8 @@ class TopBanner extends Component {
 
                 <View style={[Css.TopBanner_WeatherTime]}>
                     <View style={[Css.TopBanner_WeatherTime_LEFT]}>
-                        <Text style={[Css.TopBanner_TIME]}>14:28</Text>
-                        <Text style={[Css.TopBanner_DAY]}>2017年03月03日 周五</Text>
+                        <Text style={[Css.TopBanner_TIME]}>{this.props.time}</Text>
+                        <Text style={[Css.TopBanner_DAY]}>{this.props.day}</Text>
                     </View>
                     <View style={[Css.TopBanner_WeatherTime_RIGHT]}>
                         <View style={[Css.TopBanner_WeatherTime_RIGHT_TOP]}></View>

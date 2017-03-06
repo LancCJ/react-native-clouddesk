@@ -35,7 +35,7 @@ import { Actions } from 'react-native-router-flux'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { store } from '../redux/store/index.js';
-import { weather} from '../redux/action/actionCreator.js';
+import { weather,day,time} from '../redux/action/actionCreator.js';
 
 //模拟数据
 var pieChartOptionJson=require('../data/PieChart.json')
@@ -45,6 +45,7 @@ var listModelData=require('../data/listModels.json')
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 class HomePage extends Component {
+
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -89,8 +90,23 @@ class HomePage extends Component {
 
         store.dispatch(weather());//获取天气城市
 
+        store.dispatch(day());//获取日期
+
+        this.interval = setInterval(
+            () => {
+                store.dispatch(time());//获取时间
+            },
+            500
+        );
+
         //TODO  引导
         this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
+    }
+
+    componentWillUnmount=()=> {
+        // 如果存在this.timer，则使用clearTimeout清空。
+        // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear
+        this.interval && clearInterval(this.interval);
     }
 
     fetchData() {
@@ -119,7 +135,7 @@ class HomePage extends Component {
                 ref="listview"
                 onScroll={(e)=>this._onScroll(e)}
             >
-                <TopBanner weather={this.props.weather}/>
+                <TopBanner weather={this.props.weather}  day={this.props.day}  time={this.props.time}/>
 
                 <TitleBar titleName="数据统计" titleColor="#E5471C"/>
                 <View style={[Css.Chart,Css.CENTER_CONTAINER]}>
@@ -186,7 +202,9 @@ class HomePage extends Component {
 
 export default connect(
     (store) => ({
-        weather: store.weatherStore.weather
+        weather: store.weatherStore.weather,
+        day: store.dayStore.day,
+        time: store.timeStore.time
     }),
     (dispatch) => ({
         weatherAction: bindActionCreators(weather, dispatch)

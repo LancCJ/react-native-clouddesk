@@ -22,3 +22,36 @@ export function weather(state = initialWeather, action) {
     }
 }
 
+
+const initialDay = {
+    day:"加载中"
+}
+
+export function day(state = initialDay, action) {
+    switch(action.type) {
+        case TYPES.DAY:
+            state.day = action.day;
+            return {
+                ...state,
+            };
+        default:
+            return state;
+    }
+}
+
+const initialTime = {
+    time:"加载中"
+}
+
+
+export function time(state = initialTime, action) {
+    switch(action.type) {
+        case TYPES.TIME:
+            state.time = action.time;
+            return {
+                ...state,
+            };
+        default:
+            return state;
+    }
+}
