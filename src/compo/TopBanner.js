@@ -53,10 +53,10 @@ class TopBanner extends Component {
                     <View style={[Css.TopBanner_WeatherTime_RIGHT]}>
                         <View style={[Css.TopBanner_WeatherTime_RIGHT_TOP]}></View>
                         <View style={[Css.TopBanner_WeatherTime_RIGHT_BOTTOM]}>
-                            <Text style={[Css.TopBanner_TEMPERATURE]}>17°</Text>
+                            <Text style={[Css.TopBanner_TEMPERATURE]}>{this.props.weather.temperature}</Text>
                             <View>
-                                <Text style={[Css.TopBanner_LOCATION]}>济宁</Text>
-                                <Text style={[Css.TopBanner_WEATHER]}>多云 轻度污染</Text>
+                                <Text style={[Css.TopBanner_LOCATION]}>{this.props.weather.city}</Text>
+                                <Text style={[Css.TopBanner_WEATHER]}>{this.props.weather.airpollution}</Text>
                             </View>
                         </View>
                     </View>

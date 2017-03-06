@@ -87,10 +87,9 @@ class HomePage extends Component {
             dataSource: this.state.dataSource.cloneWithRows(listnNewsData.data),
         });
 
-        console.log(store);
+        store.dispatch(weather());//获取天气城市
 
-        store.dispatch(weather());
-        //TODO
+        //TODO  引导
         this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
     }
 
@@ -120,7 +119,7 @@ class HomePage extends Component {
                 ref="listview"
                 onScroll={(e)=>this._onScroll(e)}
             >
-                <TopBanner/>
+                <TopBanner weather={this.props.weather}/>
 
                 <TitleBar titleName="数据统计" titleColor="#E5471C"/>
                 <View style={[Css.Chart,Css.CENTER_CONTAINER]}>
@@ -187,7 +186,7 @@ class HomePage extends Component {
 
 export default connect(
     (store) => ({
-        weather: store.weather
+        weather: store.weatherStore.weather
     }),
     (dispatch) => ({
         weatherAction: bindActionCreators(weather, dispatch)
