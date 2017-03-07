@@ -1,10 +1,14 @@
 'use strict';
 
+/**LoginPage登录页**/
+import  login from './LoginReducer';
+/**HomePage首页**/
+import  system from './SystemReducer';
 import { combineReducers } from 'redux';
-import { weather,day,time} from './reducers.js';
 
 export default combineReducers({
-  weatherStore: weather,
-  dayStore: day,
-  timeStore: time
+    /**LoginPage登录页**/
+    loginStore:login,
+    /**HomePage首页**/
+    systemStore: system,
 });

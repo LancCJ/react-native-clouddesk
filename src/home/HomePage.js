@@ -32,10 +32,8 @@ import GridView from 'react-native-grid-view'
 import { Actions } from 'react-native-router-flux'
 
 //redux
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { store } from '../redux/store/index.js';
-import { weather,day,time} from '../redux/action/actionCreator.js';
+import { weather,day,time} from '../redux/action/SystemAction.js';
 
 //模拟数据
 var pieChartOptionJson=require('../data/PieChart.json')
@@ -88,13 +86,13 @@ class HomePage extends Component {
             dataSource: this.state.dataSource.cloneWithRows(listnNewsData.data),
         });
 
-        store.dispatch(weather());//获取天气城市
+        this.props.dispatch(weather());//获取天气城市
 
-        store.dispatch(day());//获取日期
+        this.props.dispatch(day());//获取日期
 
         this.interval = setInterval(
             () => {
-                store.dispatch(time());//获取时间
+                this.props.dispatch(time());//获取时间
             },
             500
         );
@@ -200,14 +198,13 @@ class HomePage extends Component {
     )
 }
 
+
 export default connect(
     (store) => ({
-        weather: store.weatherStore.weather,
-        day: store.dayStore.day,
-        time: store.timeStore.time
-    }),
-    (dispatch) => ({
-        weatherAction: bindActionCreators(weather, dispatch)
+        weather: store.systemStore.weather,
+        day: store.systemStore.day,
+        time: store.systemStore.time
     })
 )(HomePage);
+
 

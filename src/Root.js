@@ -29,8 +29,9 @@ import PeopleSearchPage from './app/PeopleSearch/PeopleSearchPage'
 import { Router, Scene ,ActionConst ,Modal} from 'react-native-router-flux';
 
 //Redux
-import { store } from './redux/store/index.js';
 import { Provider } from 'react-redux';
+import configureStore from './redux/store/index';
+let store = configureStore();
 
 class Root extends Component {
     constructor(props) {

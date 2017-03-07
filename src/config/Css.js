@@ -110,9 +110,8 @@ const CSS = {
         height:height,
         resizeMode:'cover'
     },
-    /*****************************LoginPage页面************************************/
     login:{
-       marginTop:height/4
+       marginTop:height/5
     },
     loginInput:{
         marginTop: 4,
@@ -124,6 +123,16 @@ const CSS = {
         fontSize: 30,
         fontWeight: 'bold',
         opacity: 0.8,
+    },
+    loginPageProblems:{
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        marginTop:5,
+        marginLeft:15,
+        marginRight :15
+    },
+    loginPageText:{
+        color:'#FFFFFF'
     },
     /*****************************HomePage页面************************************/
     actionButtonIcon:{
