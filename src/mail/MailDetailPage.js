@@ -26,6 +26,18 @@ class MailDetailPage extends Component {
         };
     }
 
+    componentDidMount=()=> {
+        this.setState({
+            time:this.props.data.time,
+            title:this.props.data.title,
+            content:this.props.data.content,
+            send:this.props.data.send,
+            reply_content:this.props.data.reply_content,
+            reply:this.props.data.reply,
+        });
+
+    }
+
     render = () => (
         <View style={[Css.COLUMN_CONTAINER]}>
             <NavBar title="邮 件 详 情"/>
@@ -36,20 +48,20 @@ class MailDetailPage extends Component {
                         source={{uri: 'mailopen'}}
                     />
                     <View style={[Css.mailDetailTitle]}>
-                        <Text>收信时间:{this.props.data.time}</Text>
-                        <Text numberOfLines={2}>邮件主题:{this.props.data.title}</Text>
+                        <Text>收信时间:{this.state.time}</Text>
+                        <Text numberOfLines={2}>邮件主题:{this.state.title}</Text>
                     </View>
                 </View>
                 <View style={[Css.mailContent]}>
-                    <Text >    {this.props.data.content}</Text>
-                    <Text style={[Css.mailDatailSender]}>发件人({this.props.data.send})</Text>
+                    <Text >    {this.state.content}</Text>
+                    <Text style={[Css.mailDatailSender]}>发件人({this.state.send})</Text>
                 </View>
                 <View style={[Css.handlingSuggestion]}>
                     <Text style={[Css.handlingSuggestionText]}>处理意见</Text>
                 </View>
                 <View style={[Css.mailContent]}>
-                    <Text>    {this.props.data.reply_content}</Text>
-                    <Text style={[Css.mailDatailSender]}>回复人({this.props.data.reply})</Text>
+                    <Text>    {this.state.reply_content}</Text>
+                    <Text style={[Css.mailDatailSender]}>回复人({this.state.reply})</Text>
                 </View>
             </View>
             <View style={[Css.CALL_BORDER,{marginTop:Css.SCREEN_HEIGHT*0.01}]}></View>

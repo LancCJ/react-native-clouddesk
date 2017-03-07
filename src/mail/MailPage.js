@@ -40,13 +40,13 @@ class MailPage extends Component {
         )
     }
 
-
     componentDidMount=()=> {
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(listnMailsData.data),
         });
 
     }
+
     render = () => (
         <View style={[Css.COLUMN_CONTAINER]}>
             <NavBar title="收 件 箱"/>
