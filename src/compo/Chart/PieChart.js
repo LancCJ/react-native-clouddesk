@@ -17,6 +17,7 @@ import Css from '../../config/Css'
 import Echarts from 'native-echarts';
 
 const option = {
+    animation:false,
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)",
@@ -81,11 +82,9 @@ class PieChart extends Component {
     }
 
     componentDidMount=()=> {
-        setInterval(() => {
-            this.setState({
-                isLoading: false
-            });
-        }, 1000);
+        this.setState({
+            isLoading: false
+        });
     }
 
     render = () => (

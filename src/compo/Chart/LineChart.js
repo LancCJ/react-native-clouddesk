@@ -17,6 +17,7 @@ import Css from '../../config/Css'
 import Echarts from 'native-echarts';
 
 const option = {
+    animation:false,
     title: {
         text: '工作量统计',
         textStyle:{
@@ -75,11 +76,9 @@ class LineChart extends Component {
     }
 
     componentDidMount=()=> {
-        setInterval(() => {
-            this.setState({
-                isLoading: false
-            });
-        }, 2000);
+        this.setState({
+            isLoading: false
+        });
     }
 
     render = () => (
