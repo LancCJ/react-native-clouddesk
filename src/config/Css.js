@@ -217,7 +217,7 @@ const CSS = {
     /****搜索输入框样式****/
     TopBanner_Search:{
         width:width-width*0.1,
-        height:bannerHeight/6,
+        height:bannerHeight/7,
         marginLeft:width*0.05,
         marginTop:bannerHeight*0.01,
         backgroundColor:'#F1F1F1',
