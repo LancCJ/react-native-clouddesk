@@ -27,27 +27,27 @@ class ListBanner extends Component {
             <BannerLite
                 items={[
                         {
-                          imageURL: "http://h.hiphotos.baidu.com/image/h%3D200/sign=3a225a4129a4462361caa262a8227246/30adcbef76094b36fbaf3bd6aacc7cd98d109dcf.jpg",
+                          imageURL: "link1",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                         {
-                          imageURL: "http://a4.att.hudong.com/35/64/01300000276819133197645554930.jpg",
+                          imageURL: "link2",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                         {
-                          imageURL: "http://pic69.nipic.com/file/20150610/21067407_235515103000_2.jpg",
+                          imageURL: "link1",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                         {
-                          imageURL: "http://h.hiphotos.baidu.com/image/h%3D200/sign=3a225a4129a4462361caa262a8227246/30adcbef76094b36fbaf3bd6aacc7cd98d109dcf.jpg",
+                          imageURL: "link2",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                         {
-                          imageURL: "http://a4.att.hudong.com/35/64/01300000276819133197645554930.jpg",
+                          imageURL: "link1",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                         {
-                          imageURL: "http://pic69.nipic.com/file/20150610/21067407_235515103000_2.jpg",
+                          imageURL: "link2",
                           onPress:(index)=>{console.log("tap"+index)}
                         },
                       ]}

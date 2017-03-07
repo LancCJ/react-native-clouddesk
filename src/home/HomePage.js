@@ -95,7 +95,7 @@ class HomePage extends Component {
             () => {
                 this.props.dispatch(time());//获取时间
             },
-            500
+            1000
         );
 
         //TODO  引导
