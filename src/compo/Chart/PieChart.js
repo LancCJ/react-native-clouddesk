@@ -17,7 +17,7 @@ import Css from '../../config/Css'
 import Echarts from 'native-echarts';
 
 const option = {
-    animation:false,
+    //animation:false,
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)",

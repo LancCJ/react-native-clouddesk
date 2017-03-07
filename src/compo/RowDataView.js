@@ -6,7 +6,8 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    InteractionManager
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -55,7 +56,11 @@ class RowDataView extends Component {
                         </View>
                     </TouchableOpacity>
                 ):(
-                    <TouchableOpacity onPress={()=>Actions.MailDetailPage({"data":this.props.data})}>
+                    <TouchableOpacity onPress={()=>
+                                                    InteractionManager.runAfterInteractions(() => {
+                                                        // ...耗时较长的同步的任务...
+                                                       Actions.MailDetailPage({"data":this.props.data})
+                                                    })}>
                         <View style={[Css.mailViewStyle,Css.ROW_CONTAINER]}>
                             <Image
                                 style={[Css.listMailRowImage]}

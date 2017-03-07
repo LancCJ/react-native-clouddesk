@@ -19,14 +19,13 @@ import NavBar from '../compo/NavBar'
 var listnMailsData=require('../data/listMails.json')
 
 //第三方组件
-import { Actions } from 'react-native-router-flux'
 
 class MailPage extends Component {
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows(listnMailsData.data),
+            dataSource: ds.cloneWithRows([]),
         };
     }
 
@@ -41,6 +40,13 @@ class MailPage extends Component {
         )
     }
 
+
+    componentDidMount=()=> {
+        this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(listnMailsData.data),
+        });
+
+    }
     render = () => (
         <View style={[Css.COLUMN_CONTAINER]}>
             <NavBar title="收 件 箱"/>

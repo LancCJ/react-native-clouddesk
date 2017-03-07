@@ -9,7 +9,8 @@ import {
     StatusBar,
     ScrollView,
     ListView,
-    Alert
+    Alert,
+    InteractionManager
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -184,7 +185,11 @@ class HomePage extends Component {
                 offsetX={22}
                 icon={<Icon name="ios-mail-outline" color="#FFFFFF" size={30}/>}
                 buttonStyle={{backgroundColor:'transparent'}}
-                onPress={()=>Actions.MailPage()}
+                onPress={()=>
+                InteractionManager.runAfterInteractions(() => {
+                  // ...耗时较长的同步的任务...
+                   Actions.MailPage()
+                })}
                 buttonColor="#1B52EF">
             </ActionButton>
 

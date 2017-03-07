@@ -6,7 +6,8 @@ import {
     View,
     Text,
     Image,
-    Alert
+    Alert,
+    InteractionManager
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -35,11 +36,19 @@ class Guide extends Component {
     onSkipBtnHandle = (index) => {
         //Alert.alert('Skip');
         //console.log(index);
-        Actions.HomePage();
+        InteractionManager.runAfterInteractions(() => {
+            // ...耗时较长的同步的任务...
+            Actions.HomePage();
+        })
+
     }
     doneBtnHandle = () => {
         //Alert.alert('Done');
-        Actions.LoginPage();
+        InteractionManager.runAfterInteractions(() => {
+            // ...耗时较长的同步的任务...
+            Actions.LoginPage();
+        })
+
     }
     nextBtnHandle = (index) => {
         Alert.alert('Next');
