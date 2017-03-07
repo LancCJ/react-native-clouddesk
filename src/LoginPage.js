@@ -11,6 +11,7 @@ import {
 import Css from '@config/Css'
 
 //引入自定义组件
+import NavBar from './compo/NavBar'
 
 //第三方组件
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
