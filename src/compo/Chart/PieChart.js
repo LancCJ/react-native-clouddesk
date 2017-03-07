@@ -83,7 +83,10 @@ class PieChart extends Component {
 
     componentDidMount=()=> {
         this.setState({
-            isLoading: false
+            isLoading: false,
+            option:option,
+            chartHeight:this.props.chartHeight,
+            width:this.props.chartWidth
         });
     }
 

@@ -77,7 +77,10 @@ class LineChart extends Component {
 
     componentDidMount=()=> {
         this.setState({
-            isLoading: false
+            isLoading: false,
+            option:option,
+            chartHeight:this.props.chartHeight,
+            width:this.props.chartWidth
         });
     }
 
@@ -89,7 +92,7 @@ class LineChart extends Component {
                         style={[Css.simpleLoading, {height: 80}]}
                     />
                 ):(
-                    <Echarts option={option} height={this.props.chartHeight} width={this.props.chartWidth}/>
+                    <Echarts option={this.state.option} height={this.state.chartHeight} width={this.state.chartWidth}/>
                 )}
         </View>
     )

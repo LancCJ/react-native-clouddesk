@@ -7,7 +7,54 @@
                       将node_modules/native-echaers/src/components/Echarts/tpl.html拷贝到assets下
                       需要修改node_modules/native-echaers/src/components/Echarts/index.js
                       source={{uri:'file:///android_asset/tpl.html'}}
-             IOS      暂未修改!!!       
+             IOS      暂未修改!!!    
+                
+                
+             import React, { Component } from 'react';
+             import { WebView, View, StyleSheet,Platform } from 'react-native';
+             import renderChart from './renderChart';
+             import echarts from './echarts.min';
+             
+             
+             export default class App extends Component {
+               componentWillReceiveProps(nextProps) {
+                 if(nextProps.option !== this.props.option) {
+                   this.refs.chart.reload();
+                 }
+               }
+             
+               render() {
+                 return (
+                   <View style={{flex: 1, height: this.props.height || 400,}}>
+             
+                       {Platform.OS==='ios'?(
+                               <WebView
+                                   ref="chart"
+                                   scrollEnabled = {false}
+                                   injectedJavaScript = {renderChart(this.props)}
+                                   style={{
+                         height: this.props.height || 400,
+                       }}
+                                   source={{uri:'tpl.html'}}
+                               />
+                           ):(
+                               <WebView
+                                   ref="chart"
+                                   scrollEnabled = {false}
+                                   injectedJavaScript = {renderChart(this.props)}
+                                   style={{
+                         height: this.props.height || 400,
+                       }}
+                                   source={{uri:'file:///android_asset/tpl.html'}}
+                               />
+                           )}
+             
+             
+                   </View>
+                 );
+               }
+             }
+   
         1.加入redux管理应用状态(首页的 天气 城市 时间)
     主要目的:
         1.学习组件化开发，封装通用组件，其他项目复用
