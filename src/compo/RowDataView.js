@@ -26,44 +26,21 @@ class RowDataView extends Component {
         this.state = {};
     }
 
-    componentDidMount=()=> {
-        this.props.type==='news'?(
-                this.setState({
-                    title:this.props.data.title,
-                    content:this.props.data.content,
-                    time:this.props.data.time,
-                    read:this.props.data.read,
-                    thumbnail:this.props.data.thumbnail
-                })
-            ):(this.props.type==='models'?(
-                    this.setState({
-                        title:this.props.data.title,
-                        thumbnail:this.props.data.thumbnail
-                    })
-                ):(
-                    this.setState({
-                        title:this.props.data.title,
-                        reply:this.props.data.reply,
-                        time:this.props.data.time
-                    })
-                ))
-    }
-
     render = () => (
             this.props.type==='news'?(
                     <View style={[Css.COLUMN_CONTAINER,{borderBottomColor:'#F2F2F2',borderBottomWidth:2,padding:Css.SCREEN_WIDTH*0.01}]}>
                         <View style={[Css.ROW_CONTAINER]}>
                             <View style={[Css.listNewsRowContent]}>
-                                <Text style={[{flex:2,marginLeft:Css.SCREEN_WIDTH*0.04}]} numberOfLines={1}>{this.state.title}</Text>
-                                <Text style={[{flex:4,color:'#6F6E6A'}]} numberOfLines={3}>    {this.state.content}</Text>
+                                <Text style={[{flex:2,marginLeft:Css.SCREEN_WIDTH*0.04}]} numberOfLines={1}>{this.props.data.title}</Text>
+                                <Text style={[{flex:4,color:'#6F6E6A'}]} numberOfLines={3}>    {this.props.data.content}</Text>
                                 <View style={[Css.ROW_CONTAINER,{flex:1,justifyContent:'flex-end'}]}>
-                                    <Text style={[{fontSize:Css.SCREEN_WIDTH*0.02}]}>{this.state.time}</Text>
-                                    <Text style={[{fontSize:Css.SCREEN_WIDTH*0.02}]}>阅读({this.state.read})</Text>
+                                    <Text style={[{fontSize:Css.SCREEN_WIDTH*0.02}]}>{this.props.data.time}</Text>
+                                    <Text style={[{fontSize:Css.SCREEN_WIDTH*0.02}]}>阅读({this.props.data.read})</Text>
                                 </View>
                             </View>
                             <Image
                                 style={[Css.listNewsRowImage]}
-                                source={{uri: this.state.thumbnail}}
+                                source={{uri: this.props.data.thumbnail}}
                             />
                         </View>
                     </View>
@@ -72,8 +49,8 @@ class RowDataView extends Component {
                 (
                     <TouchableOpacity onPress={()=>Actions.PeopleSearchPage()}>
                         <View style={Css.innerViewStyle}>
-                            <Image source={{uri:this.state.thumbnail}} style={Css.iconStyle}/>
-                            <Text style={[{color:'#6F6E6A',fontSize:8,marginTop:5}]}>{this.state.title}</Text>
+                            <Image source={{uri:this.props.data.thumbnail}} style={Css.iconStyle}/>
+                            <Text style={[{color:'#6F6E6A',fontSize:8,marginTop:5}]}>{this.props.data.title}</Text>
                         </View>
                     </TouchableOpacity>
                 ):(
@@ -88,9 +65,9 @@ class RowDataView extends Component {
                                 source={{uri: 'mail'}}
                             />
                             <View style={[Css.mailInfo]}>
-                                <Text numberOfLines={1}>标题:{this.state.title}</Text>
-                                <Text>回复人:{this.state.reply}</Text>
-                                <Text>发件日期:{this.state.time}</Text>
+                                <Text numberOfLines={1}>标题:{this.props.data.title}</Text>
+                                <Text>回复人:{this.props.data.reply}</Text>
+                                <Text>发件日期:{this.props.data.time}</Text>
                             </View>
                             <View style={[Css.mailDetailButtonView]}>
                                 <Text style={[Css.mailDetailButton]}>邮件详情</Text>

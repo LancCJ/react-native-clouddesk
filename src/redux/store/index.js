@@ -1,6 +1,5 @@
 'use strict';
 
-
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { persistStore, autoRehydrate } from 'redux-persist';
