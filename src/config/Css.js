@@ -176,7 +176,7 @@ const CSS = {
         marginLeft:width*0.05,
         backgroundColor:'transparent',
         flexDirection: 'row',
-        marginTop:bannerHeight/3,
+        marginTop:bannerHeight/4,
         justifyContent:'flex-start'
     },
     TopBanner_WeatherTime_LEFT:{
@@ -217,7 +217,7 @@ const CSS = {
     /****搜索输入框样式****/
     TopBanner_Search:{
         width:width-width*0.1,
-        height:bannerHeight/6,
+        height:bannerHeight/5,
         marginLeft:width*0.05,
         marginTop:bannerHeight*0.01,
         backgroundColor:'#F1F1F1',
@@ -228,7 +228,7 @@ const CSS = {
     },
     TopBanner_SearchInput:{
         width:width-width*0.1-width*0.15,
-        height:bannerHeight/6,
+        height:Platform.OS==='ios'?bannerHeight/5:bannerHeight/5,
         marginLeft:width*0.05,
         borderRadius:bannerHeight/5/4,
         backgroundColor:'#F1F1F1'

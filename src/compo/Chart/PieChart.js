@@ -82,12 +82,11 @@ class PieChart extends Component {
     }
 
     componentDidMount=()=> {
-        this.setState({
-            isLoading: false,
-            option:option,
-            chartHeight:this.props.chartHeight,
-            width:this.props.chartWidth
-        });
+        setTimeout(()=>{
+            this.setState({
+                isLoading: false
+            })
+        },1000)
     }
 
     render = () => (

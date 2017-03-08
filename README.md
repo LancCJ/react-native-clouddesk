@@ -7,7 +7,7 @@
                       将node_modules/native-echaers/src/components/Echarts/tpl.html拷贝到assets下
                       需要修改node_modules/native-echaers/src/components/Echarts/index.js
                       source={{uri:'file:///android_asset/tpl.html'}}
-             IOS      暂未修改!!!    
+             IOS      将   tpl.html  放置  Xcode项目 下面 然后如下引用
                 
                 
              import React, { Component } from 'react';

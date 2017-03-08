@@ -12,6 +12,7 @@
     "react-native": "0.42.0",
     "react-native-action-button": "^2.6.2",
     "react-native-app-intro": "^1.1.5",
+    "react-native-cached-image": "^1.2.5",
     "react-native-elements": "^0.9.7",
     "react-native-grid-view": "^0.4.1",
     "react-native-router-flux": "^3.38.0",

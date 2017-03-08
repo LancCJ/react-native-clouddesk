@@ -76,12 +76,11 @@ class LineChart extends Component {
     }
 
     componentDidMount=()=> {
-        this.setState({
-            isLoading: false,
-            option:option,
-            chartHeight:this.props.chartHeight,
-            width:this.props.chartWidth
-        });
+        setTimeout(()=>{
+            this.setState({
+                isLoading: false
+            })
+        },2000)
     }
 
     render = () => (
@@ -92,7 +91,7 @@ class LineChart extends Component {
                         style={[Css.simpleLoading, {height: 80}]}
                     />
                 ):(
-                    <Echarts option={this.state.option} height={this.state.chartHeight} width={this.state.chartWidth}/>
+                    <Echarts option={option} height={this.props.chartHeight} width={this.props.chartWidth}/>
                 )}
         </View>
     )

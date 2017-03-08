@@ -17,7 +17,8 @@ import Css from '../config/Css'
 import StaticImage from '../config/StaticImage'
 
 //第三方组件
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import CachedImage from 'react-native-cached-image'
 const userIcon = (<Icon name="user-o" size={Css.SCREEN_WIDTH*0.04} color="#F1F1F1"/>)
 const searchIcon = (<Icon name="search" size={Css.SCREEN_WIDTH*0.05} color="#6F6E6A"/>)
 
@@ -30,10 +31,12 @@ class TopBanner extends Component {
 
     render = () => (
         <View style={[Css.COLUMN_CONTAINER]}>
-            <Image
+            <CachedImage
                 source={{uri: StaticImage.TopBanner_BACKGROUND}}
                 style={Css.TopBanner_BACKGROUND}
             >
+
+
 
                 <View style={[Css.TopBanner_Info]}>
                     {/*<Image*/}
@@ -75,7 +78,7 @@ class TopBanner extends Component {
                         {searchIcon}
                     </TouchableOpacity>
                 </View>
-            </Image>
+            </CachedImage>
         </View>
     )
 }
