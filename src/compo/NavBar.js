@@ -34,10 +34,8 @@ class NavBar extends Component {
             <View style={Css.navBarContentStyle}>
                 <View style={[Css.topIconStyles,{paddingLeft:Css.SCREEN_WIDTH*0.04}]}>
                     <TouchableOpacity onPress={()=>
-                    InteractionManager.runAfterInteractions(() => {
-                                                        // ...耗时较长的同步的任务...
                                                        Actions.pop()
-                                                    })}>
+                    }>
                         <View>
                             <Icon color={'#FFFFFF'} name='ios-arrow-back-outline' size={30} />
                         </View>

@@ -150,10 +150,17 @@ class HomePage extends Component {
                 <TitleBar titleName="常用功能" titleColor="#81CB3B"/>
                 <View>
                     <GridView
+
                         items={this.state.modelDataSource}
                         itemsPerRow={5}
                         renderItem={(rowData) => this.renderRowView(rowData,'models')}
                     />
+                    {/*<ListView*/}
+                        {/*contentContainerStyle={Css.listModels}*/}
+                        {/*dataSource={this.state.modelDataSource}*/}
+                        {/*renderRow={(rowData) => this.renderRowView(rowData,'models')}*/}
+                        {/*enableEmptySections={true}*/}
+                    {/*/>*/}
                 </View>
 
                 <TitleBar titleName="新闻公告" titleColor="#FF9733"/>
@@ -183,7 +190,6 @@ class HomePage extends Component {
                   // ...耗时较长的同步的任务...
                    Actions.MailPage()
                 })}
-                activeOpacity={1}
                 buttonColor="#1B52EF">
             </ActionButton>
 

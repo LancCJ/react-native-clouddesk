@@ -36,18 +36,14 @@ class Guide extends Component {
     onSkipBtnHandle = (index) => {
         //Alert.alert('Skip');
         //console.log(index);
-        InteractionManager.runAfterInteractions(() => {
             // ...耗时较长的同步的任务...
-            Actions.HomePage();
-        })
+            Actions.HomePage()
 
     }
     doneBtnHandle = () => {
         //Alert.alert('Done');
-        InteractionManager.runAfterInteractions(() => {
             // ...耗时较长的同步的任务...
-            Actions.LoginPage();
-        })
+            Actions.LoginPage()
 
     }
     nextBtnHandle = (index) => {

@@ -55,10 +55,8 @@ class RowDataView extends Component {
                     </TouchableOpacity>
                 ):(
                     <TouchableOpacity onPress={()=>
-                                                    InteractionManager.runAfterInteractions(() => {
-                                                        // ...耗时较长的同步的任务...
                                                        Actions.MailDetailPage({"data":this.props.data})
-                                                    })}>
+                    }>
                         <View style={[Css.mailViewStyle,Css.ROW_CONTAINER]}>
                             <Image
                                 style={[Css.listMailRowImage]}
