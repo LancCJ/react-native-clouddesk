@@ -225,13 +225,17 @@ const CSS = {
         justifyContent:'center',
         alignItems:'center',
         flexDirection: 'row',
+        opacity:0.5
     },
     TopBanner_SearchInput:{
         width:width-width*0.1-width*0.15,
         height:Platform.OS==='ios'?bannerHeight/5:bannerHeight/5,
         marginLeft:width*0.05,
         borderRadius:bannerHeight/5/4,
-        backgroundColor:'#F1F1F1'
+        backgroundColor:'transparent',
+        opacity:1,
+        borderWidth:0,
+        borderColor:'transparent'
     },
     /****TitleBar标题样式****/
     TitleBar:{

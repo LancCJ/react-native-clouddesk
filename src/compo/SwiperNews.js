@@ -33,6 +33,7 @@ class SwiperNews extends Component {
                 height={Css.SCREEN_WIDTH/2.5}
                 dotColor="#F5F5F5"
                 autoplay={true}
+                paginationStyle={{ bottom:2}}
             >
                 <View >
                     <Image

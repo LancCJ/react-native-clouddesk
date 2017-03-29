@@ -7,6 +7,14 @@ import { AsyncStorage } from 'react-native';
 import reducers from '../reducer';
 
 const logger = store => next => action => {
+    if (!__DEV__) {
+        global.console = {
+            info: () => {},
+            log: () => {},
+            warn: () => {},
+            error: () => {},
+        };
+    }
     if(typeof action === 'function') console.log('dispatching a function');
     else console.log('dispatching', action);
     let result = next(action);

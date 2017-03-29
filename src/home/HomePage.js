@@ -99,7 +99,7 @@ class HomePage extends Component {
         );
 
         //TODO  引导
-        this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
+        //this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
     }
 
     componentWillUnmount=()=> {
@@ -150,17 +150,10 @@ class HomePage extends Component {
                 <TitleBar titleName="常用功能" titleColor="#81CB3B"/>
                 <View>
                     <GridView
-
                         items={this.state.modelDataSource}
                         itemsPerRow={5}
                         renderItem={(rowData) => this.renderRowView(rowData,'models')}
                     />
-                    {/*<ListView*/}
-                        {/*contentContainerStyle={Css.listModels}*/}
-                        {/*dataSource={this.state.modelDataSource}*/}
-                        {/*renderRow={(rowData) => this.renderRowView(rowData,'models')}*/}
-                        {/*enableEmptySections={true}*/}
-                    {/*/>*/}
                 </View>
 
                 <TitleBar titleName="新闻公告" titleColor="#FF9733"/>
@@ -185,17 +178,9 @@ class HomePage extends Component {
                 offsetX={22}
                 icon={<Icon name="ios-mail-outline" color="#FFFFFF" size={30}/>}
                 buttonStyle={{backgroundColor:'transparent'}}
-                onPress={()=>
-                InteractionManager.runAfterInteractions(() => {
-                  // ...耗时较长的同步的任务...
-                   Actions.MailPage()
-                })}
+                onPress={()=>Actions.MailPage()}
                 buttonColor="#1B52EF">
             </ActionButton>
-
-
-
-
             {/*<View style={[{backgroundColor:"red",alignSelf:"flex-start",width:Css.SCREEN_WIDTH,height:Css.SCREEN_HEIGHT}]}>*/}
                 {/*<Text>我是指引界面</Text>*/}
             {/*</View>*/}
