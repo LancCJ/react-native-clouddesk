@@ -1,7 +1,7 @@
 /**
  * Created by lanccj on 2017/3/3.
  */
-import React, {Component} from 'react';
+import React, {Component,PureComponent} from 'react';
 import {
     View,
     Text,
@@ -43,7 +43,7 @@ var listnNewsData=require('../data/listData.json')
 var listModelData=require('../data/listModels.json')
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
-class HomePage extends Component {
+class HomePage extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -53,8 +53,9 @@ class HomePage extends Component {
             isShowGuide:true,
             isShowToTop: false,
             dataSource: ds.cloneWithRows([]),
-            modelDataSource: listModelData.data,
+            modelDataSource: listModelData.data
         };
+
     }
 
     _onScroll=(e)=> {
@@ -91,21 +92,30 @@ class HomePage extends Component {
 
         this.props.dispatch(day());//获取日期
 
-        this.interval = setInterval(
-            () => {
-                this.props.dispatch(time());//获取时间
-            },
-            1000
-        );
+        // InteractionManager.runAfterInteractions(()=>{
+        //     this.interval = setInterval(
+        //         () => {
+        //             this.props.dispatch(time());//获取时间
+        //         },
+        //         1000
+        //     );
+        // })
 
+
+        //console.log('即将装载组件')
         //TODO  引导
         //this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
     }
+
+
 
     componentWillUnmount=()=> {
         // 如果存在this.timer，则使用clearTimeout清空。
         // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear
         this.interval && clearInterval(this.interval);
+        //console.log('即将卸载组件')
+
+
     }
 
     fetchData() {
@@ -178,7 +188,10 @@ class HomePage extends Component {
                 offsetX={22}
                 icon={<Icon name="ios-mail-outline" color="#FFFFFF" size={30}/>}
                 buttonStyle={{backgroundColor:'transparent'}}
-                onPress={()=>Actions.MailPage()}
+                onPress={()=> {
+                        Actions.MailPage()
+                    }
+                }
                 buttonColor="#1B52EF">
             </ActionButton>
             {/*<View style={[{backgroundColor:"red",alignSelf:"flex-start",width:Css.SCREEN_WIDTH,height:Css.SCREEN_HEIGHT}]}>*/}

@@ -1,7 +1,14 @@
 # React-Native-CloudDesk
 使用react native尝试做APP
 
+
+
+
     更新日志
+        2017年03月30日
+            优化性能记录
+            1.PureComponent
+            2.具体化render次数  通过swallowcompare（，）
         2.正式打包 因为 react-native-echarts的组件问题 
              Android   
                       将node_modules/native-echaers/src/components/Echarts/tpl.html拷贝到assets下
