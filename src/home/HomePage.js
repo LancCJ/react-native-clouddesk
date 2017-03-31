@@ -101,10 +101,10 @@ class HomePage extends PureComponent {
         //     );
         // })
 
-
         //console.log('即将装载组件')
         //TODO  引导
         //this.state.isShowGuide?(()=>Actions.ExplainPage()):(null)
+
     }
 
 

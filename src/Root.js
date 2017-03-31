@@ -66,8 +66,10 @@ class Root extends Component {
                         <Scene key="MailDetailPage" component={MailDetailPage} title="邮件详情页" hideNavBar={true} />
 
                         <Scene key="PeopleSearchPage" component={PeopleSearchPage} title="人员查询页" hideNavBar={true} />
+
+                        <Scene key="ExplainPage" component={ExplainPage} title="引导说明页" type={ActionConst.REPLACE} hideNavBar={true}/>
+
                     </Scene>
-                    <Scene key="ExplainPage" component={ExplainPage} title="引导说明页" />
                 </Scene>
             </Router>
         </Provider>

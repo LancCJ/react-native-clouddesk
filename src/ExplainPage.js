@@ -3,9 +3,11 @@
  */
 import React, {Component} from 'react';
 import {
-    View,
+    ScrollView,
     Text,
-    Image
+    Image,
+    TouchableOpacity
+
 } from 'react-native';
 
 //全局StyleSheet样式
@@ -28,12 +30,18 @@ class ExplainPage extends Component {
     }
 
     render = () => (
-            <View style={[Css.COLUMN_CONTAINER]}>
+            <ScrollView style={[Css.COLUMN_CONTAINER]}>
+                <TouchableOpacity onPress={()=>Actions.HomePage()}>
                 <Image
                     style={[Css.explainPageImage]}
                     source={{uri: 'Guide'}}
-                />
-            </View>
+                >
+
+                        <Text style={[{color:'#FFFFFF',fontSize:20,alignSelf:'flex-end'}]}>马上体验</Text>
+
+                </Image>
+                </TouchableOpacity>
+            </ScrollView>
     )
 }
 

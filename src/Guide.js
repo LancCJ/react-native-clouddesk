@@ -37,12 +37,11 @@ class Guide extends Component {
         //Alert.alert('Skip');
         //console.log(index);
             // ...耗时较长的同步的任务...
-            Actions.HomePage()
+            Actions.ExplainPage()
 
     }
     doneBtnHandle = () => {
         //Alert.alert('Done');
-            // ...耗时较长的同步的任务...
             Actions.LoginPage()
 
     }
